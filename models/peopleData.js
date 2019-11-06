@@ -13,21 +13,11 @@ function getAllPeople() {
 
 // Gets a specific individual from the database
 function getPeople(id) {
-    return db.execute("Select * from people where id = ?",  [id]);
-}
-
-function getPeopleName(name){
-    return db.execute('SELECT * FROM people where name = ? LIMIT 1', [name]);
-}
-
-function deletePeople(id){
-    return db.execute("Delete from people where id = ?",  [id])
+    return db.execute("Select * from people where id = " + id);
 }
 
 module.exports = {
     add : addPeople,
     getall : getAllPeople,
-    getpeople: getPeople,
-    getPeopleName: getPeopleName,
-    deletepeople: deletePeople
+    getpeople: getPeople 
 }
